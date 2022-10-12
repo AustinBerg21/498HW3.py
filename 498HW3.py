@@ -21,7 +21,7 @@ A = Variable(torch.tensor([2.0, 1.0]), requires_grad=True)          # initial gu
 print('Initial guess A12 and A21:',A)
 alpha = 0.0001
 
-for i in range(100):
+for n in range(100):
     Pmodel = x1 * torch.exp(A[0] * (A[1] * x2 / (A[0] * x1 + A[1] * x2)) ** 2) * Pw + x2 * torch.exp(A[1] * (A[0] * x1 / (A[0] * x1 + A[1] * x2)) ** 2) * Pd
 
     loss = (Pmodel - P)**2   # square error
